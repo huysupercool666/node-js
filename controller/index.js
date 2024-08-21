@@ -1,25 +1,29 @@
-  const StatusCode = require('../controller/helper.js')
+const { StatusCode } = require("../controller/helper.js");
 
-  function getListTask(request, response) {
+function getListTask(request, response) {
     response.writeHead(StatusCode.OK, { "Content-Type": "application/json" });
-    response.end("Get all list task");
-  };
-  function createListTask(request, response) {
-    response.writeHead(StatusCode.OK, { "Content-Type": "text/plain" });
-    response.end("Create task");
-  };
-  function updateListTask(request, response) {
-    response.writeHead(StatusCode.NO_CONTENT, { "Content-Type": "text/plain" });
-    response.end("update task");
-  };
-  function deleteListTask(request, response) {
-    response.writeHead(StatusCode.NO_CONTENT, { "Content-Type": "text/plain" });
-    response.end("delete task");
-  };
+    response.end("get all list tasks");
+}
+function createTask(request, response) {
+    response.writeHead(StatusCode.OK, { "Content-Type": "application/json" });
+    response.end("Id task created");
+}
+function updateTask(request, response) {
+    response.writeHead(StatusCode.NO_CONTENT, {
+      "Content-Type": "application/json",
+    });
+    response.end();
+}
+function deleteTask(request, response) {
+    response.writeHead(StatusCode.NO_CONTENT, {
+      "Content-Type": "application/json",
+    });
+    response.end();
+}
 
-  module.exports = {
-    getListTask,
-    createListTask,
-    updateListTask,
-    deleteListTask,
-  };
+module.exports = {
+  getListTask,
+  createTask,
+  updateTask,
+  deleteTask,
+};
