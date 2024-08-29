@@ -1,6 +1,6 @@
-var taskRouter = require("./tasksRouter");
+const taskRouter = require("./tasksRouter");
 
-var router = {
+const router = {
   run: function (request, response) {
     taskRouter.run(request, response);
   },

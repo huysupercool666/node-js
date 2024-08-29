@@ -1,24 +1,37 @@
-const { StatusCode } = require("../controller/helper.js");
+const { StatusCode } = require("../common/object-freeze/utils.js");
+const { handleNotFound } = require("../common/public/helper.js");
 
 function getListTask(request, response) {
+  try {
     response.writeHead(StatusCode.OK, { "Content-Type": "application/json" });
     response.end("get all list tasks");
+  } catch(error) {
+    handleNotFound(request, response);
+  }
 }
 function createTask(request, response) {
-    response.writeHead(StatusCode.OK, { "Content-Type": "application/json" });
-    response.end("Id task created");
+    try {
+      response.writeHead(StatusCode.OK, { "Content-Type": "application/json" });
+      response.end(JSON.stringify( "Response id task has been created" ));
+    } catch (error) {
+      handleNotFound(request, response);
+    }
 }
 function updateTask(request, response) {
-    response.writeHead(StatusCode.NO_CONTENT, {
-      "Content-Type": "application/json",
-    });
+  try {
+    response.writeHead(StatusCode.NO_CONTENT, { "Content-Type": "application/json" });
     response.end();
+  } catch(error) {
+    handleNotFound(request, response);
+  }
 }
 function deleteTask(request, response) {
-    response.writeHead(StatusCode.NO_CONTENT, {
-      "Content-Type": "application/json",
-    });
+  try { 
+    response.writeHead(StatusCode.NO_CONTENT, {"Content-Type": "application/json",});
     response.end();
+  } catch(error) {
+    handleNotFound(request, response);
+  }
 }
 
 module.exports = {

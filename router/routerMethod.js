@@ -1,26 +1,26 @@
 const url = require("url");
-let routerMethods = {
+const { method } = require("../common/object-freeze/utils");
+const routerMethods = {
   get: function (request, response, path, callback) {
-    if (path === url.parse(request.url, true).pathname && request.method === "GET") {
+    if (path === url.parse(request.url, true).pathname && request.method === method.get) {
       callback(request, response);
     } 
   },
   post: function (request, response, path, callback) {
-    if (path === request.url && request.method === "POST") {
+    if (path === url.parse(request.url, true).pathname && request.method === method.post) {
       callback(request, response);
     } 
   },
   delete: function (request, response, path, callback) {
-    if (path === url.parse(request.url, true).pathname && request.method === "DELETE") {
+    if (path === url.parse(request.url, true).pathname && request.method === method.delete) {
       callback(request, response);
     } 
   },
   patch: function (request, response, path, callback) {
-    if (path === url.parse(request.url, true).pathname && request.method === "PATCH") {
+    if (path === url.parse(request.url, true).pathname && request.method === method.patch) {
       callback(request, response);
     } 
   },
-
 };
 
 module.exports = routerMethods;

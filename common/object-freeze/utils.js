@@ -11,12 +11,14 @@ const StatusCode = Object.freeze({
   SERVICE_UNAVAILABLE: 503,
 });
 
-function handleNotFound(response) {
-  response.writeHead(StatusCode.NOT_FOUND, { "Content-Type": "text/plain" });
-  response.end("Not Found");
-}
+const method = Object.freeze({
+  get: "GET",
+  post: "POST",
+  patch: "PATCH",
+  delete: "DELETE",
+});
 
 module.exports = {
   StatusCode,
-  handleNotFound,
+  method
 };
