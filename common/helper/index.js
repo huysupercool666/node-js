@@ -1,4 +1,4 @@
-const { StatusCode } = require("../utils");
+const { StatusCode } = require("../constant");
 
 function handleNotFound(request, response) {
   response.writeHead(StatusCode.NOT_FOUND, {
