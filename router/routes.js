@@ -1,8 +1,8 @@
 module.exports = {
   tasks: {
     getTasks: "/tasks",
-    createTask: "/:id",
-    deleteTask: "/:id",
-    updateTask: "/:id",
+    createTask: "/:task-id",
+    deleteTask: "/:task-id",
+    updateTask: "/:task-id",
   },
 };
