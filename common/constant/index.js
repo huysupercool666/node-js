@@ -18,7 +18,15 @@ const method = Object.freeze({
   delete: "DELETE",
 });
 
+const taskUrl = Object.freeze({
+  getTasks: "/tasks",
+  createTask: "/tasks/:id",
+  deleteTask: "/tasks/:id",
+  updateTask: "/tasks/:id",
+});
+
 module.exports = {
   StatusCode,
-  method
+  method,
+  taskUrl,
 };

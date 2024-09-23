@@ -9,6 +9,7 @@ function getListTask(request, response) {
     handleNotFound(request, response);
   }
 }
+
 function createTask(request, response) {
   try {
     response.writeHead(StatusCode.OK, { "Content-Type": "application/json" });
@@ -17,21 +18,19 @@ function createTask(request, response) {
     handleNotFound(request, response);
   }
 }
+
 function updateTask(request, response) {
   try {
-    response.writeHead(StatusCode.NO_CONTENT, {
-      "Content-Type": "application/json",
-    });
+    response.writeHead(StatusCode.NO_CONTENT, {});
     response.end();
   } catch (error) {
     handleNotFound(request, response);
   }
 }
+
 function deleteTask(request, response) {
   try {
-    response.writeHead(StatusCode.NO_CONTENT, {
-      "Content-Type": "application/json",
-    });
+    response.writeHead(StatusCode.NO_CONTENT, {});
     response.end();
   } catch (error) {
     handleNotFound(request, response);

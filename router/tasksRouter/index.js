@@ -7,25 +7,28 @@ const userRouter = {
     routerMethods.get(
       request,
       response,
-      routes.tasks.getTasks,
+      routes.tasks.get,
       taskController.getListTask
     );
+
     routerMethods.post(
       request,
       response,
-      routes.tasks.createTask,
+      routes.tasks.create,
       taskController.createTask
     );
+
     routerMethods.delete(
       request,
       response,
-      routes.tasks.deleteTask,
+      routes.tasks.delete,
       taskController.deleteTask
     );
+    
     routerMethods.patch(
       request,
       response,
-      routes.tasks.updateTask,
+      routes.tasks.edit,
       taskController.updateTask
     );
   },

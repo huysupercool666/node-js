@@ -1,8 +1,9 @@
+const {taskUrl} = require("../common/constant/index.js")
 module.exports = {
   tasks: {
-    getTasks: "/tasks",
-    createTask: "/:task-id",
-    deleteTask: "/:task-id",
-    updateTask: "/:task-id",
+    get: taskUrl.getTasks,
+    edit: taskUrl.updateTask,
+    delete: taskUrl.deleteTask,
+    create: taskUrl.createTask
   },
 };
