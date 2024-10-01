@@ -1,5 +1,5 @@
 const url = require("url");
-const { method } = require("../../common/constants");
+const { method } = require("../common/constants");
 
 const routerMethods = {
   get: function (request, response, path, callback) {
