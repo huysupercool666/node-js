@@ -1,8 +1,7 @@
 const url = require("url");
-const { method } = require("../common/constant");
+const { method } = require("../../common/constants");
 
 const routerMethods = {
-  
   get: function (request, response, path, callback) {
     if (
       path === url.parse(request.url, true).pathname &&
@@ -29,7 +28,7 @@ const routerMethods = {
       callback(request, response);
     }
   },
-  
+
   patch: function (request, response, path, callback) {
     if (
       path === url.parse(request.url, true).pathname &&

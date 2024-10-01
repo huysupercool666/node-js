@@ -1,5 +1,5 @@
-const { StatusCode } = require("../common/constant/index.js");
-const { handleNotFound } = require("../common/helper/index.js");
+const { StatusCode } = require("../common/constants/index.js");
+const { handleNotFound } = require("../common/helpers/index.js");
 
 function getListTask(request, response) {
   try {
